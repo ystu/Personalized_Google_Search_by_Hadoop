@@ -1,21 +1,17 @@
-# Improve-Google-Ranking-by-Hadoop
-Improve Google Search Ranking by Using Hadoop Distributed System
+# Personalized_Google_Search_by_Hadoop
+Personalized Google Search by Using Hadoop Distributed System
+
+This is my graduate project in college. Our motivation comes from we found some top results from Google search were not appropriate. Also, each user has different preference, the results should be personalized. Therefore, we want to build personalized search results based on each user’s behavior. 
 
 ![image](https://github.com/ystu/Improve-Google-Ranking-by-Hadoop/blob/master/architecture.jpg)
 
-In order to improve the result in Google's search ranking, we use Chrome Extension collecting user's click data and storing in MySQL database. When users type the keyword, Using MapReduce to calculate a better result and return to Client. The result of new ranking will be displayed next to web page.
+Our system has two parts, front-end is Google chrome extension, and back-end is hadoop server. Chrome extension collects user’s behavior, such as exist time in current pages, number of licks, number of tabs and bookmark. Backend is a server included Hadoop system and MySQL database. When users search a keyword, back-end server executes MapReduce to calculate user’s score and add scores into Google’s top 100 results. Then, give the new results and display in Google chrome.
 
-Client: Chrome Extension, Javascript, HTML
+![image](https://github.com/ystu/Personalized_Google_Search_by_Hadoop/blob/master/demo.png)
 
-1. use Chrome extension to Collect user's click data, including browsing time, bookmark or not, click relative link, open other tabs etc. return data to Server.
+However, this project is not finished. The basic architecture is complete and works, but the personalization search algorithm is not designed yet and it lacks user behavior data.
 
-2. Get the new ranking from Server and display it next to web page.
 
-Server: Hadoop, Tomcat, Java, Eclipse, MySQL, HDFS
-
-1. Save user's click data in HDFS or MySQL
-
-2. When user search something, use mapreduce to counting the score of each link in HDFS, then using json format to send data to client.
 
 Build by Yun-Sheng Tu, Hsiang-Ju Chen
 
